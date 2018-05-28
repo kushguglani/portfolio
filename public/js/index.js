@@ -29,23 +29,41 @@ function submitContactForm(){
 	var subject = document.querySelector('#subject').value;
 	var contact = document.querySelector('#mobile').value;
 	var message = document.querySelector('#message').value;
-	console.log(contact);
 	var emailValidate = emailValidation(email);
 
 	if(name === '' || email ==='' || subject ==='' || message ===''){
 		document.querySelector('.messageError').innerHTML="Please fill all mendatory details";
-		errorPopup();
+		messagePopup();
 	}
 	else if(!emailValidate){
 		document.querySelector('.messageError').innerHTML="Email is not valid";
-		errorPopup();		
+		messagePopup();		
 	}
-	else if(contact.length !== 10){
+	else if(contact.length !== 10 && contact!==""){
 		document.querySelector('.messageError').innerHTML="Contact number must be 10 digits only";
-		errorPopup();
+		messagePopup();
 	}
 	else{
-			
+		var formData = {
+			name:name,
+			email:email,
+			subject:subject,
+			contact:contact,
+			message:message,
+			date:new Date().getTime()
+		}
+		axios.post('/saveContact',{
+			params:{
+				data:formData
+			}
+		})
+		.then(function(response){
+			document.querySelector('.messageError').innerHTML="Thanks for contacting us "+response.data[0].params.data.name+ " !";
+			messagePopup("success");
+		})		
+		.catch(function(error){
+			console.log(error);
+		})
 	}
 	
 		return false;
@@ -57,10 +75,15 @@ function emailValidation(email){
 	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-function errorPopup(){
+function messagePopup(data){
 	document.querySelector('.submitContactForm').innerHTML="<i class='fa fa-spinner fa-spin'></i>"
 	var msz = document.querySelector('.error');
 	var pos = -25;
+	if(data === "success"){
+		document.querySelector('.error').style.background = 'green';
+	} else{
+		document.querySelector('.error').style.background = 'rgba(250, 55, 55, 0.911)';		
+	}
 	var id = setInterval(frame,5);
 	function frame(){
 		if(pos === 5)
@@ -75,6 +98,8 @@ function errorPopup(){
 		document.querySelector('.submitContactForm').innerHTML="Send It"
 	},3500);
 }
+
+
 $(document).ready(function(){
 		/*-----------Scrool bar---------------*/
 		$('a[href*="#"]')

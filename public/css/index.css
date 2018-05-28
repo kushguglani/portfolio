@@ -517,6 +517,7 @@ hr.style-hr {
 input[type=text],
 input[type=email],
 input[type=number],
+input[type=password],
 select,
 textarea{
 	width:100%;
@@ -702,8 +703,8 @@ footer{
 	bottom:-25%;
 	left: 50%;
 	transform:translate(-50%,-50%);
-	background: #15c315;
-	color:red;
+	background: rgba(250, 55, 55, 0.911);
+	color:#fdfdfd;
 	border-radius:20px;
 	padding: 5px 15px;
 	animation-name:errorMessage;
