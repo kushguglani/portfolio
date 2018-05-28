@@ -58,7 +58,7 @@ function submitContactForm(){
 			}
 		})
 		.then(function(response){
-			document.querySelector('.messageError').innerHTML="Thanks for contacting us "+response.data[0].params.data.name+ " !";
+			document.querySelector('.messageError').innerHTML="Thanks for contacting us "+response.data[0].name+ " !";
 			messagePopup("success");
 		})		
 		.catch(function(error){

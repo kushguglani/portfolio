@@ -16,10 +16,12 @@ MongoClient.connect(url,(err,db)=>{
     if(err)
         return console.log(`error in connecting mongodb ${err}`);
     console.log("connected to mongodb");
-    dbs = db.db('portfolio');
+    dbs = db.db('kush');
 
     app.post('/saveContact',(req,res)=>{
-        dbs.collection('contact').insertOne(req.body,(err,response)=>{
+        dbs.collection('contact').insertOne(req.body.params.data,(err,response)=>{
+            console.log(req.body.params.data);
+            console.log(response.ops)
             if(err)
                 res.status(404).send("unable to insert " + err);
             res.send(response.ops);
