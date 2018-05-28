@@ -60,6 +60,11 @@ function submitContactForm(){
 		.then(function(response){
 			document.querySelector('.messageError').innerHTML="Thanks for contacting us "+response.data[0].name+ " !";
 			messagePopup("success");
+			document.querySelector('#name').value="";
+			document.querySelector('#email').value="";
+			document.querySelector('#subject').value="";
+			document.querySelector('#mobile').value="";
+			document.querySelector('#message').value="";
 		})		
 		.catch(function(error){
 			console.log(error);

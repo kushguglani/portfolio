@@ -396,23 +396,24 @@
 		<p class="messageError"></p>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+			function initMap() {
+				var uluru = { lat: 12.970, lng: 77.759 };
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 15,
+					center: uluru
+				});
+				var marker = new google.maps.Marker({
+					position: { lat: 12.963217, lng: 77.7494518 },
+					map: map
+				});
+			}
+		</script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnH3J6RwrO2JPg0HZHnO174u-xeT3UKDQ&callback=initMap"
 		type="text/javascript"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="js/index.js"></script>
-	<script>
-		function initMap() {
-			var uluru = { lat: 12.970, lng: 77.759 };
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 15,
-				center: uluru
-			});
-			var marker = new google.maps.Marker({
-				position: { lat: 12.963217, lng: 77.7494518 },
-				map: map
-			});
-		}
-	</script>
+	
 </body>
 
 </html>
