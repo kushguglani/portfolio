@@ -104,6 +104,14 @@ function messagePopup(data){
 	},3500);
 }
 
+function displayProject(element){
+	console.log(element);
+	document.querySelector(".project_diplay").style.display = "block";
+}
+function closeProject(){
+	document.querySelector(".project_diplay").style.display = "none";
+}
+
 
 $(document).ready(function(){
 		/*-----------Scrool bar---------------*/

@@ -256,6 +256,47 @@ header{
 div.box *{
 	transition: all ease-in 300ms;
 }
+.project_diplay{
+	position: fixed;
+	display: none;
+	margin:10%;
+	top:0;
+	left:0;
+	background-color: #dedede;
+	width: 80%;
+	border: 1px solid #aaa;
+    border-radius: 10px;
+    box-shadow: 0 1px #999;
+}
+.img-video-part{
+	width:50%;
+	float: left;
+}
+.img-video-part h3{
+	margin-left:20%;
+	color:#555;
+}
+.img-video-part img{
+	width:350px;
+	height: 300px;
+	margin-top:20%;
+	margin-left:20%;
+	margin-bottom:5%;
+}
+.about-project-section{
+	width: 50%;
+	float: left;
+	margin-top: 10%;
+}
+.close-project{
+    font-size: 30px;
+    position: absolute;
+    top: -3%;
+    right: -1%;
+}
+.cursorPointer{
+	cursor: pointer;
+}
 
 /*---work-experience Section ---*/
 
