@@ -104,12 +104,19 @@ function messagePopup(data){
 	},3500);
 }
 
-function displayProject(element){
+function displayProject(element,url,name) {
+
 	console.log(element);
 	document.querySelector(".project_diplay").style.display = "block";
+	var parent = document.querySelector(".img-video-part");
+	parent.innerHTML="";
+	parent.insertAdjacentHTML("afterbegin", "<video width='520' height='340' autoplay controls><source src = './img/projects/"+url+"' type = 'video/webm' >Your browser does not support HTML5 video.</video ><h3>" + name +"</h3>")
 }
 function closeProject(){
 	document.querySelector(".project_diplay").style.display = "none";
+
+
+	
 }
 
 

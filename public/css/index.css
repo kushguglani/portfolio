@@ -269,11 +269,9 @@ div.box *{
     box-shadow: 0 1px #999;
 }
 .img-video-part{
-	width:50%;
-	float: left;
+	text-align: center;
 }
 .img-video-part h3{
-	margin-left:20%;
 	color:#555;
 }
 .img-video-part img{
@@ -683,15 +681,15 @@ footer{
 
 	/*--- left social link ---*/
 .left-social-link{
-	visibility: hidden;
+	/* visibility: hidden; */
 	z-index: 300;
 	position: fixed;
 	top:45%;
 	left:10%;
 	transform: translate(-50%,-50%);
 	list-style: none;
-	opacity: 0;
-	animation: links-animate 900ms 100ms ease-in-out infinite;
+	opacity: 1;
+	/* animation: links-animate 900ms 100ms ease-in-out infinite; */
 }
 .left-social-link li:hover{
 	animation: links-rotate 900ms 100ms ease-in-out 1;
