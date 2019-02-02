@@ -1,5 +1,4 @@
 function openTab(obj){
-		// console.log(obj.getAttribute('class'));
 		var tab = document.querySelector('.'+obj.id);
 		document.querySelector('#fa-'+obj.id).classList.toggle('fa-angle-down');
 		document.querySelector('#fa-'+obj.id).classList.toggle('fa-angle-up');
@@ -73,7 +72,6 @@ function submitContactForm(){
 	
 		return false;
 	
-	// console.log(name);
 	return false;
 }
 function emailValidation(email){
@@ -106,7 +104,6 @@ function messagePopup(data){
 
 function displayProject(element,url,name) {
 
-	console.log(element);
 	document.querySelector(".project_diplay").style.display = "block";
 	var parent = document.querySelector(".img-video-part");
 	parent.innerHTML="";
